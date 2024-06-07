@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import viteLogo from '/vite.svg';
-import Container from './components/Container';
+import Content from './components/Content';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <Container>
+    <Content>
       <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
         <img src={viteLogo} className="logo" alt="Vite logo" />
       </a>
@@ -17,7 +17,7 @@ function App() {
           count is {count}
         </button>
       </div>
-    </Container>
+    </Content>
   );
 }
 
