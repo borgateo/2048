@@ -7,7 +7,7 @@ import {
   GRID_SIZE,
 } from '@/constants';
 import { Tile as TileProps } from './types';
-import usePrevProps from '@/hooks/use-prev-props';
+import usePrevProps from '@/hooks/usePrevProps';
 import { TileStyled } from './Tile.styled';
 
 export default function Tile({ position, value }: TileProps) {

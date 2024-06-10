@@ -5,11 +5,11 @@ import {
   useEffect,
   useReducer,
 } from "react";
-import { isNil, throttle, random } from "lodash";
+import { isNil, throttle } from "lodash";
 import { mergeAnimationDuration, GRID_SIZE } from "@/constants";
 import { Tile } from "@/components/types";
-import gameReducer, { ActionType, initialState } from "@/reducers/game-reducer";
-import { randomizeTile } from "@/utils/randomize-tile";
+import gameReducer, { ActionType, initialState } from "@/reducers/gameReducer";
+import { randomizeTile } from "@/utils/randomizeTile";
 
 export const GameContext = createContext({
   score: 0,

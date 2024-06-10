@@ -1,7 +1,7 @@
 import Board from "./components/Board";
 import Restart from "./components/Restart";
 import Score from "./components/Score";
-import GameProvider from "./context/game-context";
+import GameProvider from "./context/gameContext";
 
 function App() {
   return (
