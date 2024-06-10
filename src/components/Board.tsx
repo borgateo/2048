@@ -3,13 +3,8 @@ import { useCallback, useContext, useEffect, useRef } from "react";
 import { Tile as TileProps } from "./types";
 import Tile from "./Tile";
 import { GameContext } from "@/context/game-context";
-import {
-  GRID_SIZE,
-  MOVE_DOWN,
-  MOVE_LEFT,
-  MOVE_RIGHT,
-  MOVE_UP,
-} from "@/constants";
+import { GRID_SIZE } from "@/constants";
+import { ActionType } from "@/reducers/game-reducer";
 
 import { BoardContainer, Cell, Grid, TilesContainer } from "./Board.styled";
 
@@ -24,16 +19,16 @@ export default function Board() {
 
       switch (e.code) {
         case "ArrowUp":
-          moveTiles(MOVE_UP);
+          moveTiles(ActionType.MOVE_UP);
           break;
         case "ArrowDown":
-          moveTiles(MOVE_DOWN);
+          moveTiles(ActionType.MOVE_DOWN);
           break;
         case "ArrowLeft":
-          moveTiles(MOVE_LEFT);
+          moveTiles(ActionType.MOVE_LEFT);
           break;
         case "ArrowRight":
-          moveTiles(MOVE_RIGHT);
+          moveTiles(ActionType.MOVE_RIGHT);
           break;
       }
     },

@@ -1,6 +1,6 @@
 import { flattenDeep, isEqual, isNil } from "lodash";
 import { uid } from "uid";
-import { GRID_SIZE, ActionType } from "@/constants";
+import { GRID_SIZE } from "@/constants";
 import { Tile, TileMap } from "@/components/types";
 
 type State = {
@@ -11,9 +11,10 @@ type State = {
   score: number;
 };
 
-enum ActionType {
+export enum ActionType {
   CREATE_TILE = "create_tile",
   CLEAN_UP = "clean_up",
+  RESET_GAME = "reset_game",
   MOVE_UP = "move_up",
   MOVE_DOWN = "move_down",
   MOVE_LEFT = "move_left",
@@ -23,6 +24,7 @@ enum ActionType {
 type Action =
   | { type: ActionType.CREATE_TILE; tile: Tile }
   | { type: ActionType.CLEAN_UP }
+  | { type: ActionType.RESET_GAME }
   | { type: ActionType.MOVE_UP }
   | { type: ActionType.MOVE_DOWN }
   | { type: ActionType.MOVE_LEFT }
@@ -74,7 +76,7 @@ export default function gameReducer(
         hasChanged: false,
       };
     }
-    case "create_tile": {
+    case ActionType.CREATE_TILE: {
       const tileId = uid();
       const [x, y] = action.tile.position;
       const newBoard = JSON.parse(JSON.stringify(state.board));
@@ -297,6 +299,8 @@ export default function gameReducer(
         score,
       };
     }
+    case ActionType.RESET_GAME:
+      return initialState;
     default:
       return state;
   }

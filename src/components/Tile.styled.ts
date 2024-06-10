@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 export const TileStyled = styled.div<{ value: number }>`
   position: absolute;
@@ -36,7 +36,8 @@ export const TileStyled = styled.div<{ value: number }>`
   ${({ value }) =>
     value === 2 &&
     css`
-      box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0),
+      box-shadow:
+        0 0 30px 10px rgba(243, 215, 116, 0),
         inset 0 0 0 1px rgba(255, 255, 255, 0);
     `}
 
@@ -44,7 +45,8 @@ export const TileStyled = styled.div<{ value: number }>`
     value === 4 &&
     css`
       background: #ede0c8;
-      box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0),
+      box-shadow:
+        0 0 30px 10px rgba(243, 215, 116, 0),
         inset 0 0 0 1px rgba(255, 255, 255, 0);
     `}
 
@@ -76,7 +78,8 @@ export const TileStyled = styled.div<{ value: number }>`
     value === 128 &&
     css`
       background: #edcf72;
-      box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381),
+      box-shadow:
+        0 0 30px 10px rgba(243, 215, 116, 0.2381),
         inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
     `}
 
@@ -84,7 +87,8 @@ export const TileStyled = styled.div<{ value: number }>`
     value === 256 &&
     css`
       background: #edcc61;
-      box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746),
+      box-shadow:
+        0 0 30px 10px rgba(243, 215, 116, 0.31746),
         inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
     `}
 
@@ -92,7 +96,8 @@ export const TileStyled = styled.div<{ value: number }>`
     value === 512 &&
     css`
       background: #edc850;
-      box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683),
+      box-shadow:
+        0 0 30px 10px rgba(243, 215, 116, 0.39683),
         inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
     `}
 
@@ -100,7 +105,8 @@ export const TileStyled = styled.div<{ value: number }>`
     value === 1024 &&
     css`
       background: #edc53f;
-      box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619),
+      box-shadow:
+        0 0 30px 10px rgba(243, 215, 116, 0.47619),
         inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
     `}
 
@@ -108,7 +114,8 @@ export const TileStyled = styled.div<{ value: number }>`
     value >= 2048 &&
     css`
       background: #edc22e;
-      box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556),
+      box-shadow:
+        0 0 30px 10px rgba(243, 215, 116, 0.55556),
         inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
     `}
 
