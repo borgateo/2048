@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const ResetStyles = createGlobalStyle`
   /* Reset styles */
@@ -37,6 +37,7 @@ const ResetStyles = createGlobalStyle`
   body {
     min-width: 320px;
     min-height: 100vh;
+    /* background-color: #CCC; */
   }
 
   h1 {
