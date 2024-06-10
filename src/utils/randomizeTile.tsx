@@ -1,4 +1,4 @@
-import { random } from "lodash";
+import { random } from 'lodash';
 
 export const randomizeTile = (
   min: number = 0,

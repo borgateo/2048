@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { GRID_SIZE } from "@/constants";
+import styled from 'styled-components';
+import { GRID_SIZE } from '@/constants';
 
 export const BoardContainer = styled.div`
   margin: 0 auto 20px;

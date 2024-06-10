@@ -1,12 +1,12 @@
-import { useCallback, useContext, useEffect, useRef } from "react";
+import { useCallback, useContext, useEffect, useRef } from 'react';
 
-import { Tile as TileProps } from "./types";
-import Tile from "./Tile";
-import { GameContext } from "@/context/gameContext";
-import { GRID_SIZE } from "@/constants";
-import { ActionType } from "@/reducers/gameReducer";
+import { Tile as TileProps } from './types';
+import Tile from './Tile';
+import { GameContext } from '@/context/gameContext';
+import { GRID_SIZE } from '@/constants';
+import { ActionType } from '@/reducers/gameReducer';
 
-import { BoardContainer, Cell, Grid, TilesContainer } from "./Board.styled";
+import { BoardContainer, Cell, Grid, TilesContainer } from './Board.styled';
 
 export default function Board() {
   const { getTiles, moveTiles, startGame } = useContext(GameContext);
@@ -18,16 +18,16 @@ export default function Board() {
       e.preventDefault();
 
       switch (e.code) {
-        case "ArrowUp":
+        case 'ArrowUp':
           moveTiles(ActionType.MOVE_UP);
           break;
-        case "ArrowDown":
+        case 'ArrowDown':
           moveTiles(ActionType.MOVE_DOWN);
           break;
-        case "ArrowLeft":
+        case 'ArrowLeft':
           moveTiles(ActionType.MOVE_LEFT);
           break;
-        case "ArrowRight":
+        case 'ArrowRight':
           moveTiles(ActionType.MOVE_RIGHT);
           break;
       }
@@ -60,10 +60,10 @@ export default function Board() {
   }, [startGame]);
 
   useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown);
 
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, [handleKeyDown]);
 

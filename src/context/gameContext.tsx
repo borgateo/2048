@@ -4,12 +4,12 @@ import {
   useCallback,
   useEffect,
   useReducer,
-} from "react";
-import { isNil, throttle } from "lodash";
-import { mergeAnimationDuration, GRID_SIZE } from "@/constants";
-import { Tile } from "@/components/types";
-import gameReducer, { ActionType, initialState } from "@/reducers/gameReducer";
-import { randomizeTile } from "@/utils/randomizeTile";
+} from 'react';
+import { isNil, throttle } from 'lodash';
+import { mergeAnimationDuration, GRID_SIZE } from '@/constants';
+import { Tile } from '@/components/types';
+import gameReducer, { ActionType, initialState } from '@/reducers/gameReducer';
+import { randomizeTile } from '@/utils/randomizeTile';
 
 export const GameContext = createContext({
   score: 0,
