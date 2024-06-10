@@ -1,7 +1,8 @@
-import styled from 'styled-components';
-import { GRID_SIZE } from '@/constants';
+import styled from "styled-components";
+import { GRID_SIZE } from "@/constants";
 
 export const BoardContainer = styled.div`
+  margin: 0 auto 20px;
   position: relative;
   width: ${({ theme }) =>
     `calc(${theme.pixelSize} * 8 * ${GRID_SIZE} + ${theme.pixelSize} * 5)`};

@@ -5,10 +5,11 @@ import {
   useEffect,
   useReducer,
 } from "react";
-import { isNil, throttle } from "lodash";
+import { isNil, throttle, random } from "lodash";
 import { mergeAnimationDuration, GRID_SIZE } from "@/constants";
 import { Tile } from "@/components/types";
 import gameReducer, { ActionType, initialState } from "@/reducers/game-reducer";
+import { randomizeTile } from "@/utils/randomize-tile";
 
 export const GameContext = createContext({
   score: 0,
@@ -36,13 +37,23 @@ export default function GameProvider({ children }: PropsWithChildren) {
   );
 
   const startGame = () => {
+    const occupiedPositions = new Set<string>();
+    const [firstX, firstY] = randomizeTile(0, GRID_SIZE - 1, occupiedPositions);
+    occupiedPositions.add(`${firstX},${firstY}`);
+
+    const [secondX, secondY] = randomizeTile(
+      0,
+      GRID_SIZE - 1,
+      occupiedPositions
+    );
+    occupiedPositions.add(`${secondX},${secondY}`);
     dispatch({
       type: ActionType.CREATE_TILE,
-      tile: { position: [0, 1], value: 2 },
+      tile: { position: [firstX, firstY], value: 2 },
     });
     dispatch({
       type: ActionType.CREATE_TILE,
-      tile: { position: [0, 2], value: 2 },
+      tile: { position: [secondX, secondY], value: 2 },
     });
   };
 
