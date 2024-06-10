@@ -1,9 +1,18 @@
-# React + TypeScript + Vite
+# 2048 Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple game written in React.
 
+![2048 Game](.docs/2048.png)
+
+
+## Tech Stack
+
+- Vite
+- React
+- Typescript
 - Styled-components
-- TypeScript
+- Vitest
+- React-Testing-Library
 - ESLint
 - Prettier
 
