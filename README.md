@@ -26,6 +26,16 @@ A simple game written in React. [Play here](https://2048-game-react-vite.netlify
   pnpm dev
 ```
 
+## Configs
+
+### GRID_SIZE
+
+In the [`constants.ts`](./src/constants.ts) it's possible to configure the size of the grid. 
+The available values are:
+- 4: 4x4
+- 5: 5x5
+- 6: 6x6
+
 ## Todo
 
 - [ ] Add win status and its animation
