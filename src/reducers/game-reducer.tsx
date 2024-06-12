@@ -12,7 +12,6 @@ import type {
   MOVE_RIGHT,
   SHOW_GAME_OVER,
 } from "../constants";
-import { i } from "vitest/dist/reporters-yx5ZTtEV.js";
 
 interface StateGame {
   board: string[][];
