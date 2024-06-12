@@ -1,14 +1,15 @@
-import { useContext } from 'react';
-import { GameContext } from '@/context/game-context';
-import { ScoreContainer, ScoreValue } from './Score.styled';
+import { useContext } from "react";
+import { GameContext } from "../context/game-context";
+import { ScoreContainer, ScoreValue, GameOver } from "./Score.styled";
 
-export default function Score() {
-  const { score } = useContext(GameContext);
+export default function Score(): JSX.Element {
+  const { score, isGameOver } = useContext(GameContext);
 
   return (
     <ScoreContainer>
       Score
       <ScoreValue>{score}</ScoreValue>
+      {isGameOver && <GameOver>Game Over!</GameOver>}
     </ScoreContainer>
   );
 }

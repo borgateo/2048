@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ScoreContainer = styled.div`
   box-shadow: ${({ theme }) => theme.backgrounds.glare};
@@ -28,4 +28,17 @@ export const ScoreValue = styled.div`
   @media (min-width: 512px) {
     font-size: 28px;
   }
+`;
+
+export const GameOver = styled.div`
+  color: white;
+  font-size: 2.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  padding: 30px;
 `;

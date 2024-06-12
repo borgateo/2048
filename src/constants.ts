@@ -1,4 +1,6 @@
 // ==== Configurable Grid Size ====
+
+// NOTE: use grid size of 2 to test the game over screen
 export const GRID_SIZE = 6; // [4, 5, 6]
 export const GRID_SIZE_MULTIPLIER = {
   4: 11.5,
