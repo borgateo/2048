@@ -1,32 +1,32 @@
-import { useEffect, useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
+import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import {
-  containerWidthMobile,
-  containerWidthDesktop,
-  mergeAnimationDuration,
+  DESKTOP_WIDTH,
+  MOBILE_WIDTH,
+  MERGE_ANIMATION_DURATION,
   GRID_SIZE,
-} from '@/constants';
-import { Tile as TileProps } from './types';
-import usePrevProps from '@/hooks/usePrevProps';
-import { TileStyled } from './Tile.styled';
+} from "../constants";
+import usePrevProps from "../hooks/use-prev-props";
+import { TileStyled } from "./Tile.styled";
+import type { Tile as TileProps } from "./types";
 
-export default function Tile({ position, value }: TileProps) {
+export default function Tile({ position, value }: TileProps): JSX.Element {
   const isWideScreen = useMediaQuery({ minWidth: 512 });
-  const containerWidth = isWideScreen
-    ? containerWidthDesktop
-    : containerWidthMobile;
+  const containerWidth = isWideScreen ? DESKTOP_WIDTH : MOBILE_WIDTH;
 
   const [scale, setScale] = useState(1);
   const previousValue = usePrevProps<number>(value);
   const hasChanged = previousValue !== value;
 
-  const positionToPixels = (position: number) =>
-    (position / GRID_SIZE) * containerWidth;
+  const positionToPixels = (pos: number): number =>
+    (pos / GRID_SIZE) * containerWidth;
 
   useEffect(() => {
     if (hasChanged) {
       setScale(1.1);
-      setTimeout(() => setScale(1), mergeAnimationDuration);
+      setTimeout(() => {
+        setScale(1);
+      }, MERGE_ANIMATION_DURATION);
     }
   }, [hasChanged]);
 

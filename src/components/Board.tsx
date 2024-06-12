@@ -2,9 +2,9 @@ import { useCallback, useContext, useEffect, useRef } from 'react';
 
 import { Tile as TileProps } from './types';
 import Tile from './Tile';
-import { GameContext } from '@/context/gameContext';
+import { GameContext } from '@/context/game-context';
+import { ActionType } from '@/reducers/game-reducer';
 import { GRID_SIZE } from '@/constants';
-import { ActionType } from '@/reducers/gameReducer';
 
 import { BoardContainer, Cell, Grid, TilesContainer } from './Board.styled';
 

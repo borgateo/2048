@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { GameContext } from '@/context/gameContext';
+import { GameContext } from '@/context/game-context';
 
 import { Button } from './Restart.styled';
 

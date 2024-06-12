@@ -1,17 +1,15 @@
-import styled from 'styled-components';
-import { GRID_SIZE } from '@/constants';
+import styled from "styled-components";
+import { GRID_SIZE, GRID_SIZE_MULTIPLIER } from "../constants";
 
 export const BoardContainer = styled.div`
   margin: 0 auto 20px;
   position: relative;
   width: ${({ theme }) =>
-    `calc(${theme.pixelSize} * 8 * ${GRID_SIZE} + ${theme.pixelSize} * 5)`};
+    `calc(${theme.pixelSize} * 7.8 * ${GRID_SIZE} + ${theme.pixelSize} * 5)`};
 
   @media (min-width: 512px) {
     width: ${({ theme }) =>
-      `calc(${theme.pixelSize} * 12.5 * ${GRID_SIZE} + ${theme.pixelSize} * 13)`};
-    height: ${({ theme }) =>
-      `calc(${theme.pixelSize} * 12.5 * ${GRID_SIZE} + ${theme.pixelSize} * 13)`};
+      `calc(${theme.pixelSize} * ${GRID_SIZE_MULTIPLIER[GRID_SIZE]} * ${GRID_SIZE} + ${theme.pixelSize} * 13)`};
   }
 `;
 

@@ -1,55 +1,70 @@
-import { flattenDeep, isEqual, isNil } from 'lodash';
-import { uid } from 'uid';
-import { GRID_SIZE } from '@/constants';
-import { Tile, TileMap } from '@/components/types';
+import { flattenDeep, isEqual, isNil } from "lodash";
+import { uid } from "uid";
+import { GRID_SIZE } from "../constants";
+import type { Tile, TileMap } from "../components/types";
+import type {
+  CREATE_TILE,
+  CLEAN_UP,
+  RESET_GAME,
+  MOVE_UP,
+  MOVE_DOWN,
+  MOVE_LEFT,
+  MOVE_RIGHT,
+  SHOW_GAME_OVER,
+} from "../constants";
+import { i } from "vitest/dist/reporters-yx5ZTtEV.js";
 
-type State = {
+interface StateGame {
   board: string[][];
   tiles: TileMap;
   tilesByIds: string[];
   hasChanged: boolean;
   score: number;
-};
+  isGameOver: boolean;
+}
 
 export enum ActionType {
-  CREATE_TILE = 'create_tile',
-  CLEAN_UP = 'clean_up',
-  RESET_GAME = 'reset_game',
-  MOVE_UP = 'move_up',
-  MOVE_DOWN = 'move_down',
-  MOVE_LEFT = 'move_left',
-  MOVE_RIGHT = 'move_right',
+  CREATE_TILE = "create_tile",
+  CLEAN_UP = "clean_up",
+  RESET_GAME = "reset_game",
+  MOVE_UP = "move_up",
+  MOVE_DOWN = "move_down",
+  MOVE_LEFT = "move_left",
+  MOVE_RIGHT = "move_right",
+  SHOW_GAME_OVER = "show_game_over",
 }
 
 type Action =
-  | { type: ActionType.CREATE_TILE; tile: Tile }
-  | { type: ActionType.CLEAN_UP }
-  | { type: ActionType.RESET_GAME }
-  | { type: ActionType.MOVE_UP }
-  | { type: ActionType.MOVE_DOWN }
-  | { type: ActionType.MOVE_LEFT }
-  | { type: ActionType.MOVE_RIGHT };
+  | { type: typeof CREATE_TILE; tile: Tile }
+  | { type: typeof CLEAN_UP }
+  | { type: typeof RESET_GAME }
+  | { type: typeof MOVE_UP }
+  | { type: typeof MOVE_DOWN }
+  | { type: typeof MOVE_LEFT }
+  | { type: typeof MOVE_RIGHT }
+  | { type: typeof SHOW_GAME_OVER };
 
-function createBoard() {
+function createBoard(): string[][] {
   const board: string[][] = [];
 
   for (let i = 0; i < GRID_SIZE; i += 1) {
-    board[i] = new Array(GRID_SIZE).fill(undefined);
+    board[i] = new Array(GRID_SIZE).fill(undefined) as string[];
   }
 
   return board;
 }
 
-export const initialState: State = {
+export const initialState: StateGame = {
   board: createBoard(),
   tiles: {},
   tilesByIds: [],
   hasChanged: false,
   score: 0,
+  isGameOver: false,
 };
 
 export default function gameReducer(
-  state: State = initialState,
+  state: StateGame = initialState,
   action: Action
 ) {
   switch (action.type) {
@@ -301,6 +316,11 @@ export default function gameReducer(
     }
     case ActionType.RESET_GAME:
       return initialState;
+    case ActionType.SHOW_GAME_OVER:
+      return {
+        ...state,
+        isGameOver: true,
+      };
     default:
       return state;
   }
