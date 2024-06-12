@@ -1,6 +1,6 @@
 # 2048 Game
 
-A simple game written in React.
+A simple game written in React. [Play here](https://2048-game-react-vite.netlify.app/)
 
 ![2048 Game](.docs/2048.png)
 
