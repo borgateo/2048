@@ -1,7 +1,7 @@
-import { flattenDeep, isEqual, isNil } from "lodash";
-import { uid } from "uid";
-import { GRID_SIZE } from "../constants";
-import type { Tile, TileMap } from "../components/types";
+import { flattenDeep, isEqual, isNil } from 'lodash';
+import { uid } from 'uid';
+import { GRID_SIZE } from '../constants';
+import type { Tile, TileMap } from '../components/types';
 import type {
   CREATE_TILE,
   CLEAN_UP,
@@ -11,7 +11,7 @@ import type {
   MOVE_LEFT,
   MOVE_RIGHT,
   SHOW_GAME_OVER,
-} from "../constants";
+} from '../constants';
 
 interface StateGame {
   board: string[][];
@@ -23,14 +23,14 @@ interface StateGame {
 }
 
 export enum ActionType {
-  CREATE_TILE = "create_tile",
-  CLEAN_UP = "clean_up",
-  RESET_GAME = "reset_game",
-  MOVE_UP = "move_up",
-  MOVE_DOWN = "move_down",
-  MOVE_LEFT = "move_left",
-  MOVE_RIGHT = "move_right",
-  SHOW_GAME_OVER = "show_game_over",
+  CREATE_TILE = 'create_tile',
+  CLEAN_UP = 'clean_up',
+  RESET_GAME = 'reset_game',
+  MOVE_UP = 'move_up',
+  MOVE_DOWN = 'move_down',
+  MOVE_LEFT = 'move_left',
+  MOVE_RIGHT = 'move_right',
+  SHOW_GAME_OVER = 'show_game_over',
 }
 
 type Action =

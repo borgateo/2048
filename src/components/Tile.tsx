@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
-import { useMediaQuery } from "react-responsive";
+import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import {
   DESKTOP_WIDTH,
   MOBILE_WIDTH,
   MERGE_ANIMATION_DURATION,
   GRID_SIZE,
-} from "../constants";
-import usePrevProps from "../hooks/use-prev-props";
-import { TileStyled } from "./Tile.styled";
-import type { Tile as TileProps } from "./types";
+} from '../constants';
+import usePrevProps from '../hooks/use-prev-props';
+import { TileStyled } from './Tile.styled';
+import type { Tile as TileProps } from './types';
 
 export default function Tile({ position, value }: TileProps): JSX.Element {
   const isWideScreen = useMediaQuery({ minWidth: 512 });

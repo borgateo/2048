@@ -17,11 +17,11 @@ export const MERGE_ANIMATION_DURATION = 100; // ms
 export const MOVE_ANIMATION_DURATION = 200; // ms
 
 // ==== Moves ====
-export const CREATE_TILE = "create_tile";
-export const CLEAN_UP = "clean_up";
-export const RESET_GAME = "reset_game";
-export const MOVE_UP = "move_up";
-export const MOVE_DOWN = "move_down";
-export const MOVE_LEFT = "move_left";
-export const MOVE_RIGHT = "move_right";
-export const SHOW_GAME_OVER = "show_game_over";
+export const CREATE_TILE = 'create_tile';
+export const CLEAN_UP = 'clean_up';
+export const RESET_GAME = 'reset_game';
+export const MOVE_UP = 'move_up';
+export const MOVE_DOWN = 'move_down';
+export const MOVE_LEFT = 'move_left';
+export const MOVE_RIGHT = 'move_right';
+export const SHOW_GAME_OVER = 'show_game_over';
